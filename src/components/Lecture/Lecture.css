@@ -1,0 +1,106 @@
+/* Overall styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styles */
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.TopDiv {
+  padding-top: 7vmax;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+}
+
+/* Video Player styles */
+.video-player {
+  margin: 20px;
+}
+
+/* Upcoming Videos styles */
+.nextVideos {
+  border: 5px solid rgb(168, 23, 23);
+  min-height: 540px;
+  margin: 20px;
+  max-height: 540px;
+  overflow-y: scroll;
+}
+
+.nextVideos h3 {
+  font-size: 1.5em;
+}
+
+/* Video List styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+button {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00796b;
+}
+
+/* Comments styles */
+.BottomDiv {
+  margin: 20px;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+/* Load Comments button styles */
+button {
+  background-color: #009688;
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00796b;
+}
+
+.videoTitle{
+  position: absolute;
+  left: 7vmax;
+  padding-left: 0.5em;
+  padding-top: 5vmax;
+  font-size: 1.5em;
+}
