@@ -1,0 +1,15 @@
+.comments{
+
+
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: scroll;
+    min-height: 50vmax;
+    max-height: 50vmax;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}

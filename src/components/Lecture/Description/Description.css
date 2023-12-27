@@ -1,0 +1,24 @@
+/* Description styles */
+.description-container {
+    padding: 20px;
+    width: 980px;
+    margin: 0 auto;
+
+
+  
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .video-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .video-description {
+    color: #555;
+    line-height: 1.4;
+  }
+  

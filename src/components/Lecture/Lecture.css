@@ -14,12 +14,20 @@ div {
 
 .TopDiv {
   padding-top: 7vmax;
-  border: 2px solid black;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 20px;
 }
+/* Media Query */
+@media screen and (max-width: 768px) {
+ 
+  .TopDiv {
+
+    flex-direction: column;
+    align-items: center;
+  }
+} */
 
 /* Video Player styles */
 .video-player {
@@ -28,15 +36,52 @@ div {
 
 /* Upcoming Videos styles */
 .nextVideos {
-  border: 5px solid rgb(168, 23, 23);
   min-height: 540px;
   margin: 20px;
   max-height: 540px;
   overflow-y: scroll;
-}
+  background-color: #f5f5f5;
 
-.nextVideos h3 {
-  font-size: 1.5em;
+  /* Scrollbar Styles */
+  scrollbar-width: thin;
+  scrollbar-color: #2fb2ea #6b66d2; /* Track and Handle colors */
+
+  /* Webkit (Chrome, Safari) Styles */
+  &::-webkit-scrollbar {
+    border-radius: 40px;
+    width: 8px; /* Width of the scrollbar */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #1fa6f4; /* Color of the thumb */
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #cfd8dc; /* Color of the track */
+  }
+
+
+  h3 {
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Adjust styles for screens with a maximum width of 768px */
+  .nextVideos {
+    min-height: 50vmax;
+    max-height: 50vmax;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+  
+    margin: 20px;
+  
+  
+    h3 {
+      font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+  }
+  
 }
 
 /* Video List styles */
@@ -63,11 +108,38 @@ button:hover {
 
 /* Comments styles */
 .BottomDiv {
-  margin: 20px;
-}
+  min-height: 50vmax;
+  max-height: 50vmax;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: row;
 
-h3 {
-  font-size: 1.5em;
+  margin: 20px;
+
+
+  h3 {
+    font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+}
+@media screen and (max-width: 768px)
+ {
+  /* Adjust styles for screens with a maximum width of 768px */
+  .BottomDiv {
+    min-height: fit-content;
+    max-height: fit-content;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+
+  
+    margin: 20px;
+  
+  
+    h3 {
+      font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+  }
+  
 }
 
 ul {
@@ -97,10 +169,41 @@ button:hover {
   background-color: #00796b;
 }
 
-.videoTitle{
+.videoTitle {
   position: absolute;
   left: 7vmax;
   padding-left: 0.5em;
   padding-top: 5vmax;
   font-size: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjust styles for screens with a maximum width of 768px */
+  .TopDiv {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-player,
+  .nextVideos,
+  .BottomDiv {
+    margin: 10px; /* Adjust margin for smaller screens */
+  }
+  .BottomDiv{
+
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+  
+    margin: 20px;
+  
+  
+    h3 {
+      font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  .videoTitle {
+    left: 0;
+  }
 }

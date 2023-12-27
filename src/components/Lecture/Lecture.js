@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import "./Lecture.css";
+import VideoCard from './VideoCard.js';
+import Comments from './CommentSection/Comments.js';
+import Description from './Description/Description.js';
+
 
 function VideoPlayer() {
 
   const [comments, setComments] = useState([]);
   const recommendedVideos = [
     { LectureNumber : 1 ,
+      thumbnailUrl : 'https://i.ytimg.com/vi/92bkNXvnpmg/maxresdefault.jpg',
       id: '92bkNXvnpmg',
       title: 'Video 1' ,
+      Description :"This is my video 1",
           quizIntervals: {"00:10":{
             "question":"What is the capital of France?",
             "options":["New York", "London", "Paris", "Dublin"],
@@ -27,7 +33,11 @@ function VideoPlayer() {
         }
     },
     
-    { LectureNumber : 2 ,id: 'U07wzhfu66M', title: 'Video2' ,
+    { LectureNumber : 2 ,
+      thumbnailUrl : 'https://i.ytimg.com/vi/U07wzhfu66M/maxresdefault.jpg',
+      id: 'U07wzhfu66M',
+      title: 'Video2' ,
+      Description :"This is my video 2",
               quizIntervals: {"00:10":{
                 "question":"What is the capital of France?",
                 "options":["New York", "London", "Paris", "Dublin"],
@@ -44,9 +54,25 @@ function VideoPlayer() {
                 "answerIndex":1
               },
 
-            }
+            },
+    comments: [
+      {
+        "id": 1,
+        "text": "Great video!",
+        "user": "User1"
+      },
+      {
+        "id": 2,
+        "text": "Awesome content!",
+        "user": "User2"
+      }
+      
+    ]
   },
-  { LectureNumber : 3 ,id: '92bkNXvnpmg', title: 'this is  my Video 3' ,
+  { LectureNumber : 3 ,
+    thumbnailUrl : 'https://i.ytimg.com/vi/92bkNXvnpmg/maxresdefault.jpg',
+    id: '92bkNXvnpmg', title: 'this is  my Video 3' ,
+    Description :"This is my video 3",
               quizIntervals: {"00:10":{
                 "question":"What is the capital of France?",
                 "options":["New York", "London", "Paris", "Dublin"],
@@ -90,7 +116,7 @@ function VideoPlayer() {
       <div className='TopDiv'>
        
           <div className="video-player">
-            <ReactPlayer url={`https://www.youtube.com/watch?v=${currentVideo.id}`} controls={true} width="980px" height="540px" />
+            <ReactPlayer url={`https://www.youtube.com/watch?v=${currentVideo.id}`} controls={true} width="980px" height="540px"  />
           </div>
           
 
@@ -99,31 +125,20 @@ function VideoPlayer() {
           <h3>Upcomming Videos</h3>
           <ul>
             {recommendedVideos.map(video => (
-              <li key={video.id}>
-                <button onClick={() => changeVideo(video)}>{video.title}</button>
-              </li>
+              <a href="#" onClick={() => changeVideo(video)}>
+                <VideoCard video={video} />
+              </a>
+              
             ))}
           </ul>
 
           </div>
       </div>
-
-      
       <div className="BottomDiv">
-      {/* Display Comments */}
-      <h3>Comments</h3>
-      <ul>
-        {comments.map(comment => (
-          <li key={comment.id}>
-            <strong>{comment.user}:</strong> {comment.text}
-          </li>
-        ))}
-      </ul>
-      
-      </div>
-      <button onClick={loadComments}>Load Comments</button>
+      <Description video={currentVideo} />
     
-      
+      <Comments />
+      </div>
     </div>
   );
 }
